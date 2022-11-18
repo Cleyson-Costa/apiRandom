@@ -1,0 +1,151 @@
+{
+	"info": {
+		"_postman_id": "38c8050a-3e81-4979-af16-b3d2004c8c6a",
+		"name": "apiRandom",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "20487304"
+	},
+	"item": [
+		{
+			"name": "Geradores",
+			"item": [
+				{
+					"name": "Nome",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:8000/nome?amount=2",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"nome"
+							],
+							"query": [
+								{
+									"key": "amount",
+									"value": "2"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "CPF",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:8000/CPF?amount=2&mask=False",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"CPF"
+							],
+							"query": [
+								{
+									"key": "amount",
+									"value": "2"
+								},
+								{
+									"key": "mask",
+									"value": "False"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Data Nascimento",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:8000/dtnasci?minAge=0&maxAge=115&amount=2&mask=%Y-%m-%d",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"dtnasci"
+							],
+							"query": [
+								{
+									"key": "minAge",
+									"value": "0"
+								},
+								{
+									"key": "maxAge",
+									"value": "115"
+								},
+								{
+									"key": "amount",
+									"value": "2"
+								},
+								{
+									"key": "mask",
+									"value": "%Y-%m-%d"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Pessoa",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:8000/pessoa?minAge=0&maxAge=115&amount=2",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"pessoa"
+							],
+							"query": [
+								{
+									"key": "minAge",
+									"value": "0"
+								},
+								{
+									"key": "maxAge",
+									"value": "115"
+								},
+								{
+									"key": "amount",
+									"value": "2"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
