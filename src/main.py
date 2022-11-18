@@ -1,37 +1,38 @@
-import json
-from fastapi import FastAPI
-from fastapi.responses import JSONResponse
-import func
+from \
+    fastapi \
+import \
+    FastAPI
+from \
+    fastapi.responses \
+import \
+    JSONResponse
+from \
+    auxMain \
+import \
+    getNome, \
+    getPai, \
+    getMae, \
+    getCpf, \
+    getDtnasci, \
+    getPessoa
 
 app = FastAPI()
 
 @app.get("/nome")
 def nome(amount: int = 1, sex: str = "I"):
-    listReturn = []
-    for i in range(amount):
-        listReturn.append(func.getName(False, sex))
-    return JSONResponse(listReturn)
+    return JSONResponse(getNome(amount, sex))
 
 @app.get("/pai")
 def pai(amount: int = 1):
-    listReturn = []
-    for i in range(amount):
-        listReturn.append(func.getNameF(False))
-    return JSONResponse(listReturn)
+    return JSONResponse(getPai(amount))
 
 @app.get("/mae")
 def mae(amount: int = 1):
-    listReturn = []
-    for i in range(amount):
-        listReturn.append(func.getNameM(False))
-    return JSONResponse(listReturn)
+    return JSONResponse(getMae(amount))
 
 @app.get("/CPF")
 def cpf(amount: int = 1, mask: bool = False):
-    listReturn = []
-    for i in range(amount):
-        listReturn.append(func.getCPF(False, mask))
-    return JSONResponse(listReturn)
+    return JSONResponse(getCpf(amount, mask))
 
 @app.get("/dtnasci")
 def dtnasci(
@@ -40,10 +41,7 @@ def dtnasci(
     amount: int = 1,
     mask: str = "%Y-%m-%d"
 ):
-    listReturn = []
-    for i in range(amount):
-        listReturn.append(func.getDateB(False, minAge, maxAge, mask))
-    return JSONResponse(listReturn)
+    return JSONResponse(getDtnasci(minAge, maxAge, amount, mask))
 
 @app.get("/pessoa")
 def pessoa(
@@ -53,20 +51,4 @@ def pessoa(
     maskCPF: bool = False,
     maskDt: str = "%Y-%m-%d"
 ):
-    vLoop = True
-    while vLoop:
-        listReturn = []
-        for i in range(amount):
-            listItem = []
-            listItem.append('{' + func.getName(True))
-            listItem.append(func.getNameM(True))
-            listItem.append(func.getNameF(True))
-            listItem.append(func.getCPF(True, maskCPF))
-            listItem.append(func.getDateB(True, minAge, maxAge, maskDt) + '}')
-            try:
-                listReturn.append(json.loads(','.join(listItem)))
-                vLoop = False
-            except:
-                vLoop = True
-            
-    return JSONResponse(listReturn)
+    return JSONResponse(getPessoa(minAge, maxAge, amount, maskCPF, maskDt))

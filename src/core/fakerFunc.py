@@ -2,7 +2,7 @@ from faker import Faker
 
 fake = Faker('pt_BR')
 
-def getName(dblQuotes: bool = True, sex: str = "I"):
+def funcName(dblQuotes: bool = True, sex: str = "I"):
     if (sex == "F"):
         name = fake.name_female()
     elif(sex == "M"):
@@ -15,19 +15,19 @@ def getName(dblQuotes: bool = True, sex: str = "I"):
     else:
         return 'nome: ' + name.replace(".","")
 
-def getNameM(dblQuotes: bool = True):
+def funcNameM(dblQuotes: bool = True):
     if dblQuotes:
         return '"mae": "' + fake.name_female().replace(".","") + '"'
     else:
         return 'mae: ' + fake.name_female().replace(".","")
 
-def getNameF(dblQuotes: bool = True):
+def funcNameF(dblQuotes: bool = True):
     if dblQuotes:
         return '"pai": "' + fake.name_male().replace(".","") + '"'
     else:
         return 'pai: ' + fake.name_male().replace(".","")
 
-def getCPF(dblQuotes: bool = True, mask: bool = False):
+def funcCPF(dblQuotes: bool = True, mask: bool = False):
     if mask:
         doc = fake.cpf()
     else:
@@ -37,7 +37,7 @@ def getCPF(dblQuotes: bool = True, mask: bool = False):
     else:
         return 'CPF: ' + doc
 
-def getDateB(
+def funcDateB(
     dblQuotes: bool = True,
     minAge: int = 0,
     maxAge : int = 115,

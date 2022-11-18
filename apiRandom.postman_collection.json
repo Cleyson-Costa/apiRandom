@@ -15,17 +15,77 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://127.0.0.1:8000/nome?amount=2",
+							"raw": "http://10.80.0.30:8000/nome?amount=2&sex=I",
 							"protocol": "http",
 							"host": [
-								"127",
+								"10",
+								"80",
 								"0",
-								"0",
-								"1"
+								"30"
 							],
 							"port": "8000",
 							"path": [
 								"nome"
+							],
+							"query": [
+								{
+									"key": "amount",
+									"value": "2"
+								},
+								{
+									"key": "sex",
+									"value": "I"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Pai",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://10.80.0.30:8000/pai?amount=2",
+							"protocol": "http",
+							"host": [
+								"10",
+								"80",
+								"0",
+								"30"
+							],
+							"port": "8000",
+							"path": [
+								"pai"
+							],
+							"query": [
+								{
+									"key": "amount",
+									"value": "2"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Mãe",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://10.80.0.30:8000/mae?amount=2",
+							"protocol": "http",
+							"host": [
+								"10",
+								"80",
+								"0",
+								"30"
+							],
+							"port": "8000",
+							"path": [
+								"mae"
 							],
 							"query": [
 								{
