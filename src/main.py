@@ -1,14 +1,6 @@
-from \
-    fastapi \
-import \
-    FastAPI
-from \
-    fastapi.responses \
-import \
-    JSONResponse
-from \
-    auxMain \
-import \
+from fastapi import FastAPI
+from fastapi.responses import JSONResponse
+from auxMain import \
     getNome, \
     getPai, \
     getMae, \
@@ -17,6 +9,10 @@ import \
     getPessoa
 
 app = FastAPI()
+
+@app.get("/")
+def read_root():
+    return {"Message": "apiRandom on"}
 
 @app.get("/nome")
 def nome(amount: int = 1, sex: str = "I"):
