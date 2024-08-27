@@ -2,4 +2,4 @@ build:
   docker:
     web: Dockerfile
 run:
-  web: docker build --no-cache -t apirandom .
+  web: bundle exec puma -C config/puma.rb
